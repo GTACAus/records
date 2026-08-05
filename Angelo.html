@@ -89,10 +89,10 @@
 
 <div class="receipt-container">
   <div class="receipt">
-    <iframe src="Gen.Angelo.Hart.pdf" width="100%" height="100%" style="border: none;"></iframe>
+    <iframe id="generalStoreFrame" width="100%" height="100%" style="border: none;"></iframe>
   </div>
   <div class="receipt">
-    <iframe src="Ha.Angelo.Hart.pdf" width="100%" height="100%" style="border: none;"></iframe>
+    <iframe id="hardwareFrame" width="100%" height="100%" style="border: none;"></iframe>
   </div>
 </div>
 
@@ -104,6 +104,533 @@
   <a href="Angus.html" class="button">Angus Neal's Records</a>
 </div>
 
+<script>
+// Content for the General Store (Davo's) receipt
+document.getElementById('generalStoreFrame').srcdoc = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Davo's General Store - Account</title>
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 20px;
+    background: #ffffff;
+    color: #000000;
+  }
+  .document {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #cfe8f7;
+  }
+  .header {
+    background: #cdeaf9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+  }
+  .header .logo-area {
+    display: flex;
+    align-items: center;
+  }
+  .header .logo-image {
+    width: 180px;
+    height: 130px;
+    display: block;
+  }
+  .header .contact-info {
+    text-align: right;
+    color: #1a3fae;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px 10px 30px;
+  }
+  .customer-info {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000000;
+  }
+  .customer-info .name {
+    font-weight: bold;
+  }
+  .account-table {
+    border-collapse: collapse;
+    height: fit-content;
+  }
+  .account-table td {
+    border: 1px solid #7fbfe0;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .account-table td.label {
+    background: #cdeaf9;
+    color: #1a3fae;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .account-table td.value {
+    font-style: italic;
+    color: #000000;
+  }
+  .transactions {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  .transactions th {
+    text-align: left;
+    color: #1a3fae;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid #000000;
+  }
+  .transactions td {
+    border: 1px solid #000000;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-style: italic;
+    vertical-align: middle;
+  }
+  .transactions td.cost,
+  .transactions td.balance {
+    text-align: right;
+  }
+  .transactions td.balance.negative {
+    color: #d90000;
+  }
+  .transactions td.img-cell {
+    text-align: center;
+    width: 130px;
+  }
+  .transactions td.img-cell img {
+    max-width: 100px;
+    max-height: 70px;
+    display: block;
+    margin: 0 auto;
+  }
+  .transactions td.img-cell.double img {
+    max-width: 45px;
+    max-height: 60px;
+    display: inline-block;
+    margin: 0 3px;
+  }
+  .transactions tr.blank-row td {
+    height: 45px;
+  }
+</style>
+</head>
+<body>
+
+<div class="document">
+
+  <div class="header">
+    <div class="logo-area">
+      <img class="logo-image" src="Davos.png" alt="Davo's General Store logo">
+    </div>
+    <div class="contact-info">
+      (03) 2684 3031<br>
+      33 Splinter Street,<br>
+      Pineville VIC 3625<br>
+      A.B.N. 11 274 054 138
+    </div>
+  </div>
+
+  <div class="info-row">
+    <div class="customer-info">
+      <div class="name">Angelo Hart</div>
+      <div>c/o- Mistwood Estate</div>
+      <div>Farm 4 Goldleaf Fork,</div>
+      <div>Pineville VIC 3625</div>
+    </div>
+
+    <table class="account-table">
+      <tr>
+        <td class="label">Account period</td>
+        <td class="value">July 2026</td>
+      </tr>
+      <tr>
+        <td class="label">Opening balance</td>
+        <td class="value">&ndash; $523.60</td>
+      </tr>
+      <tr>
+        <td class="label">Total due</td>
+        <td class="value">$1,139.65</td>
+      </tr>
+      <tr>
+        <td class="label">Due date</td>
+        <td class="value">2 August 2026</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="padding: 0 30px 30px 30px;">
+    <table class="transactions">
+      <colgroup>
+        <col style="width:12%">
+        <col style="width:38%">
+        <col style="width:16%">
+        <col style="width:17%">
+        <col style="width:17%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th></th>
+          <th>Cost</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>05/07/26</td>
+          <td>Assorted groceries</td>
+          <td class="img-cell"><img src="groceries.png" alt="Assorted groceries basket"></td>
+          <td class="cost">$95.65</td>
+          <td class="balance negative">&ndash; $619.25</td>
+        </tr>
+        <tr>
+          <td>05/07/26</td>
+          <td>Bedside lamp, red</td>
+          <td class="img-cell"><img src="lamp.png" alt="Red bedside lamp"></td>
+          <td class="cost">$119.95</td>
+          <td class="balance negative">&ndash; $739.20</td>
+        </tr>
+        <tr>
+          <td>05/07/26</td>
+          <td>Bed sheets, red</td>
+          <td class="img-cell"><img src="bedsheets.png" alt="Red bed sheets"></td>
+          <td class="cost">$44.95</td>
+          <td class="balance negative">&ndash; $784.15</td>
+        </tr>
+        <tr>
+          <td>12/07/26</td>
+          <td>Assorted groceries</td>
+          <td class="img-cell"><img src="groceries.png" alt="Assorted groceries basket"></td>
+          <td class="cost">$76.25</td>
+          <td class="balance negative">&ndash; $860.40</td>
+        </tr>
+        <tr>
+          <td>12/07/26</td>
+          <td>Pants, grey</td>
+          <td class="img-cell"><img src="pants.png" alt="Grey pants"></td>
+          <td class="cost">$60.00</td>
+          <td class="balance negative">&ndash; $920.40</td>
+        </tr>
+        <tr>
+          <td>19/07/26</td>
+          <td>Assorted groceries</td>
+          <td class="img-cell"><img src="groceries.png" alt="Assorted groceries basket"></td>
+          <td class="cost">$108.80</td>
+          <td class="balance negative">&ndash; $1,029.20</td>
+        </tr>
+        <tr>
+          <td>19/07/26</td>
+          <td>Socks, blue &amp; brown</td>
+          <td class="img-cell double">
+            <img src="socks-blue.png" alt="Blue socks">
+            <img src="socks-brown.png" alt="Brown socks">
+          </td>
+          <td class="cost">$18.00</td>
+          <td class="balance negative">&ndash; $1,047.20</td>
+        </tr>
+        <tr>
+          <td>26/07/26</td>
+          <td>Assorted groceries</td>
+          <td class="img-cell"><img src="groceries.png" alt="Assorted groceries basket"></td>
+          <td class="cost">$92.45</td>
+          <td class="balance negative">&ndash; $1,139.65</td>
+        </tr>
+        <tr class="blank-row">
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
 </body>
 </html>
+`;
 
+// Content for the Pineville Hardware receipt
+document.getElementById('hardwareFrame').srcdoc = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pineville Hardware - Account</title>
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 20px;
+    background: #ffffff;
+    color: #000000;
+  }
+  .document {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #f5e79a;
+  }
+  .header {
+    background: #fdf6c8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+  }
+  .header .logo-area {
+    display: flex;
+    align-items: center;
+  }
+  .header .logo-image {
+    width: 220px;
+    height: 110px;
+    display: block;
+  }
+  .header .contact-info {
+    text-align: right;
+    color: #cc0000;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 30px 10px 30px;
+  }
+  .info-table {
+    border-collapse: collapse;
+    width: 48%;
+  }
+  .info-table td {
+    border: 1px solid #999999;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .info-table td.label {
+    background: #ffffff;
+    font-weight: normal;
+    white-space: nowrap;
+    width: 45%;
+  }
+  .info-table td.value {
+    font-style: italic;
+    color: #1a3fae;
+  }
+  .info-table.right tr:nth-child(3) td,
+  .info-table.right tr:nth-child(4) td {
+    background: #fdf6c8;
+  }
+  .transactions {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  .transactions th {
+    text-align: left;
+    color: #000000;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid #000000;
+  }
+  .transactions td {
+    border: 1px solid #000000;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-style: italic;
+    color: #1a3fae;
+    vertical-align: middle;
+  }
+  .transactions td.qty,
+  .transactions td.cost,
+  .transactions td.balance {
+    text-align: right;
+    color: #000000;
+    font-style: normal;
+  }
+  .transactions td.balance.negative {
+    color: #d90000;
+  }
+  .transactions td.img-cell {
+    text-align: center;
+    width: 130px;
+  }
+  .transactions td.img-cell img {
+    max-width: 100px;
+    max-height: 70px;
+    display: block;
+    margin: 0 auto;
+  }
+  .transactions tr.blank-row td {
+    height: 45px;
+  }
+</style>
+</head>
+<body>
+
+<div class="document">
+
+  <div class="header">
+    <div class="logo-area">
+      <img class="logo-image" src="Pineville.png" alt="Pineville Hardware logo">
+    </div>
+    <div class="contact-info">
+      (03) 2684 3229<br>
+      17 Splinter Street,<br>
+      Pineville VIC 3625<br>
+      A.B.N. 25 301 141 706
+    </div>
+  </div>
+
+  <div class="info-row">
+    <table class="info-table left">
+      <tr>
+        <td class="label">Account number</td>
+        <td class="value">00417</td>
+      </tr>
+      <tr>
+        <td class="label">Account holder</td>
+        <td class="value">Angelo Hart</td>
+      </tr>
+      <tr>
+        <td class="label">Business name</td>
+        <td class="value">Mistwood Estate</td>
+      </tr>
+      <tr>
+        <td class="label">Contact</td>
+        <td class="value">(03) 2684 4508</td>
+      </tr>
+    </table>
+
+    <table class="info-table right">
+      <tr>
+        <td class="label">Account period</td>
+        <td class="value">July 2026</td>
+      </tr>
+      <tr>
+        <td class="label">Opening balance</td>
+        <td class="value">$77.85</td>
+      </tr>
+      <tr>
+        <td class="label">Total due</td>
+        <td class="value">$976.65</td>
+      </tr>
+      <tr>
+        <td class="label">Due date</td>
+        <td class="value">15 August 2026</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="padding: 10px 30px 30px 30px;">
+    <table class="transactions">
+      <colgroup>
+        <col style="width:11%">
+        <col style="width:24%">
+        <col style="width:16%">
+        <col style="width:7%">
+        <col style="width:14%">
+        <col style="width:14%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th></th>
+          <th>Qty</th>
+          <th>Cost</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>05/07/26</td>
+          <td>Timber screws</td>
+          <td class="img-cell"><img src="screws.png" alt="Timber screws"></td>
+          <td class="qty">1</td>
+          <td class="cost">$32.95</td>
+          <td class="balance">$44.90</td>
+        </tr>
+        <tr>
+          <td>05/07/26</td>
+          <td>Fencing wire, 2.5mm X 750m</td>
+          <td class="img-cell"><img src="fencingwire.png" alt="Fencing wire"></td>
+          <td class="qty">1</td>
+          <td class="cost">$130.60</td>
+          <td class="balance negative">&ndash; $85.70</td>
+        </tr>
+        <tr>
+          <td>12/07/26</td>
+          <td>Gutter guard, 180mm X 15m</td>
+          <td class="img-cell"><img src="gutterguard.png" alt="Gutter guard"></td>
+          <td class="qty">1</td>
+          <td class="cost">$24.95</td>
+          <td class="balance negative">&ndash; $110.65</td>
+        </tr>
+        <tr>
+          <td>19/07/26</td>
+          <td>Road pick</td>
+          <td class="img-cell"><img src="roadpick.png" alt="Road pick"></td>
+          <td class="qty">1</td>
+          <td class="cost">$96.00</td>
+          <td class="balance negative">&ndash; $206.65</td>
+        </tr>
+        <tr>
+          <td>26/07/26</td>
+          <td>Tap and handle basin set</td>
+          <td class="img-cell"><img src="tapware.png" alt="Tap and handle basin set"></td>
+          <td class="qty">1</td>
+          <td class="cost">$134.00</td>
+          <td class="balance negative">&ndash; $340.65</td>
+        </tr>
+        <tr>
+          <td>26/07/26</td>
+          <td>Outdoor chair</td>
+          <td class="img-cell"><img src="outdoorchair.png" alt="Outdoor chair"></td>
+          <td class="qty">4</td>
+          <td class="cost">$636.00</td>
+          <td class="balance negative">&ndash; $976.65</td>
+        </tr>
+        <tr class="blank-row">
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
+`;
+</script>
+
+</body>
+</html>
